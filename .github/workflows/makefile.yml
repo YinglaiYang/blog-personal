@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Makefile - Deploy Blog on Updates to Main
 
 on:
   push:
@@ -13,12 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: configure
-      run: ./configure
-
-    - name: Install dependencies
-      run: make
 
     - name: Deploy the blog.
       run: make deploy

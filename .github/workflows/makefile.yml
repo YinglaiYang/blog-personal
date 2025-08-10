@@ -27,5 +27,8 @@ jobs:
       with:
         tool: zola@0.21.0
 
-    - name: Deploy the blog.
-      run: make deploy
+    - name: Build the blog
+      run: zola build
+
+    - name: Deploy the blog using rsync
+      run: rsync -avrz --progress --delete-excluded public/* ${{ secrets.IONOS_PRIVATE_BLOG_SSH_USER }}@${{ secrets.IONOS_PRIVATE_BLOG_SSH_SERVER }}:./main

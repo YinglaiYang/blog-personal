@@ -14,5 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
+
     - name: Deploy the blog.
       run: make deploy

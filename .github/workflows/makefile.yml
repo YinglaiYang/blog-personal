@@ -1,0 +1,22 @@
+name: Makefile - Deploy Blog on Updates to Main
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
+
+    - name: Deploy the blog.
+      run: make deploy

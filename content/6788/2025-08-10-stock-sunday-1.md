@@ -26,6 +26,7 @@ draft = false
 
 ### $AMZN Amazon
 🐻
+Sehe Amazon hinten dran, was AI angeht.
 
 ### $AAPL Apple
 🪂

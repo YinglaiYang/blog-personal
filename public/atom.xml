@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>yangminded</title>
-    <link rel="self" type="application/atom+xml" href="https://yangminded.com/atom.xml"/>
-    <link rel="alternate" type="text/html" href="https://yangminded.com/"/>
+    <link href="https://yangminded.com/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://yangminded.com/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2025-08-09T00:00:00+00:00</updated>
     <id>https://yangminded.com/atom.xml</id>
@@ -10,19 +10,13 @@
         <title>2025-08-10</title>
         <published>2025-08-09T00:00:00+00:00</published>
         <updated>2025-08-09T00:00:00+00:00</updated>
-        
         <author>
-          <name>
-            
-              Unknown
-            
-          </name>
+          <name>Unknown</name>
         </author>
+        <link rel="alternate" href="https://yangminded.com/6788/stock-sunday-1/" type="text/html"/>
+        <id>https://yangminded.com/6788/stock-sunday-1/</id>
         
-        <link rel="alternate" type="text/html" href="https://yangminded.com/6788/stock-sunday/"/>
-        <id>https://yangminded.com/6788/stock-sunday/</id>
-        
-        <content type="html" xml:base="https://yangminded.com/6788/stock-sunday/">&lt;h1 id=&quot;vibes&quot;&gt;Vibes&lt;&#x2F;h1&gt;
+        <content type="html">&lt;h1 id=&quot;vibes&quot;&gt;Vibes&lt;&#x2F;h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Earnings Season:&lt;&#x2F;strong&gt; Markt reagiert sehr gemischt. Schwache Earnings werden sehr stark abgestraft; starke genauso stark belohnt. War der Markt am Anfang der Earnings Season noch unsicher bzgl. der Stärke von Tech im Allgemeinen, hat sich diese Unsicherheit jetzt gelegt.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Makro:&lt;&#x2F;strong&gt; Es werden Inflationszahlen rauskommen - wobei es aber schwierig ist, irgendetwas daraus zu schließen. Höchstwahrscheinlich wird die Inflation ein kleines bisschen anziehen. Reagiert der Markt darauf stark negativ? Ich glaube nicht.&lt;&#x2F;li&gt;
@@ -75,19 +69,13 @@
         <title>Accelerated Software Engineering: Hand draw State Diagrams and get PlantUML code.</title>
         <published>2025-02-23T00:00:00+00:00</published>
         <updated>2025-02-23T00:00:00+00:00</updated>
-        
         <author>
-          <name>
-            
-              Unknown
-            
-          </name>
+          <name>Unknown</name>
         </author>
-        
-        <link rel="alternate" type="text/html" href="https://yangminded.com/posts/ai-blog-use-vl-model-for-software-engineering/"/>
+        <link rel="alternate" href="https://yangminded.com/posts/ai-blog-use-vl-model-for-software-engineering/" type="text/html"/>
         <id>https://yangminded.com/posts/ai-blog-use-vl-model-for-software-engineering/</id>
         
-        <content type="html" xml:base="https://yangminded.com/posts/ai-blog-use-vl-model-for-software-engineering/">&lt;h1 id=&quot;introduction-expand-ai-copilots-beyond-coding&quot;&gt;Introduction - Expand AI Copilots Beyond Coding&lt;&#x2F;h1&gt;
+        <content type="html">&lt;h1 id=&quot;introduction-expand-ai-copilots-beyond-coding&quot;&gt;Introduction - Expand AI Copilots Beyond Coding&lt;&#x2F;h1&gt;
 &lt;p&gt;By now, everyone has heard about using LLMs for coding. You can just use a tool like plain VS Code with Github Copilot, Cursor, Windsurf or even just use ChatGPT or Claude and copy-paste code.&lt;&#x2F;p&gt;
 &lt;p&gt;But this only covers the part of writing code.&lt;&#x2F;p&gt;
 &lt;p&gt;If we look further into software development workflows, it generally involves more than just pushing out code. &lt;&#x2F;p&gt;
@@ -353,19 +341,13 @@ But the state diagram that Qwen created ends in a new state named &amp;quot;Game
         <title>MAKE the Blog - Use GNU Make to Automate Jekyll</title>
         <published>2020-05-26T00:00:00+00:00</published>
         <updated>2020-05-26T00:00:00+00:00</updated>
-        
         <author>
-          <name>
-            
-              Unknown
-            
-          </name>
+          <name>Unknown</name>
         </author>
-        
-        <link rel="alternate" type="text/html" href="https://yangminded.com/posts/make-the-blog/"/>
+        <link rel="alternate" href="https://yangminded.com/posts/make-the-blog/" type="text/html"/>
         <id>https://yangminded.com/posts/make-the-blog/</id>
         
-        <content type="html" xml:base="https://yangminded.com/posts/make-the-blog/">&lt;p&gt;There is a lot of work involved in getting static blog posts published to a server. You have to preview it for proofreading and editing, you have to build it, and in the end you also have to get the finished site onto a web server.&lt;&#x2F;p&gt;
+        <content type="html">&lt;p&gt;There is a lot of work involved in getting static blog posts published to a server. You have to preview it for proofreading and editing, you have to build it, and in the end you also have to get the finished site onto a web server.&lt;&#x2F;p&gt;
 &lt;p&gt;In the following, I will show my workflow with Zola.&lt;&#x2F;p&gt;
 &lt;p&gt;Some of the commands required are easy to handle. For example, building the Jekyll output is a simple &lt;code&gt;@bundler exec jekyll build&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;On the other hand, the upload and syncing of the site to the web server looks like this:&lt;&#x2F;p&gt;

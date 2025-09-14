@@ -31,7 +31,7 @@ header .main {
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 
   /* Otherwise header and menu is too close on small screens*/
   margin-bottom: 10px;
@@ -74,14 +74,27 @@ header .main {
   border: unset;
 }
 
-h1,
-h2,
-h3,
+h1 {
+  font-size: 1.8rem;
+  margin-top: 2em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2em;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 2em;
+}
+
 h4,
 h5,
 h6 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 2em;
+  color:#888
 }
 
 h1::before {

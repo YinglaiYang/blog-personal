@@ -9,6 +9,6 @@ serve:
 	zola serve
 
 upload:
-	@rsync -avrz --progress --delete-excluded --rsh=ssh public/* ${IONOS_PRIVATE_BLOG_SSH_USER}@${IONOS_PRIVATE_BLOG_SSH_SERVER}:./main
+	@rsync -avrz --progress --delete-excluded --rsh=ssh public/* ${IONOS_PRIVATE_BLOG_SSH_USER}@${IONOS_PRIVATE_BLOG_SSH_SERVER}:./main >> ./tmp/rsync.log
 
 deploy: build upload

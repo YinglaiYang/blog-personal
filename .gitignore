@@ -1,0 +1,6 @@
+makefile_credentials
+public/
+tmp/
+.DS_Store
+.vscode/
+.editorconfig

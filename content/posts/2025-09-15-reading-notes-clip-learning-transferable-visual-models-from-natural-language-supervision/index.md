@@ -39,9 +39,44 @@ Below the video is embedded for preview.
 ## The model architecture
 ## Contrastive Learning
 ## Ablation studies
+## Findings for Inference
+### Efficient Inference
+### Prompting change
+### Zero-Shot vs. Few-Shot
 
 # CLIP in Context
 ## The Vision-Transformer
 Dosovitsky
 ## Role of CLIP in VLMs
 ## Successors of CLIP and Alternatives to it
+
+
+# Glossary
+## Hypernetwork
+"Hypernetwork" is mentioned in section 3.1.2 of the paper. Specifically:
+> The cosine similarity of these embeddings is then calculated,
+scaled by a temperature parameter τ, and normalized into a
+probability distribution via a softmax. Note that this predic-
+tion layer is a multinomial logistic regression classifier with
+L2-normalized inputs, L2-normalized weights, no bias, and
+temperature scaling. **When interpreted this way, the image
+encoder is the computer vision backbone which computes a
+feature representation for the image and the text encoder is a
+hypernetwork (Ha et al., 2016) which generates the weights
+of a linear classifier based on the text specifying the visual
+concepts that the classes represent.**
+
+**From ChatGPT:**
+> A hypernetwork is a neural network that outputs the weights of another network, rather than predictions directly.
+> -	Example: Instead of predicting a label, a hypernetwork might output the parameters of a classifier that can then be applied to some other input.
+>
+> In CLIP’s case:
+> -	Each class description (“a photo of a dog”, “a photo of a cat”) is passed through the text encoder.
+> -	The output embedding of the text encoder acts as the weight vector for a linear classifier that separates that class from others.
+> -	In other words, the text encoder generates the classifier weights on the fly, conditioned on the text prompt.
+
+To put this more into context, consider Fig. 1 (2) and (3) with following annotations:
+1. The **blue box** is the *multinomial logistic regression classifier with L2-normalized inputs, L2-normalized weights, no bias, and temperature scaling*. It is formed by combining both the text embeddings and the calculations like cosine similarity, softmax etc. The text embeddings can change and form the weights of this classifier.
+2. The weights of this classifier change depending on the prediction task at hand. This will change which labels are encoded. This means that the "Text Encoder" puts out the weights of the classifier for prediction. **This makes the "Text Encoder" a hypernetwork.** It does not create a self-sufficient prediction, but rather weights for another model.
+3. The "Image Encoder" extracts the features for the multinomial logistic regression classifier, which serve as input (following along the orange arrow).
+![alt text](zero-shot-classic-dataset-classifier_annotated-hypernetwork.png)

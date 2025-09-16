@@ -5,3 +5,4 @@ tmp/
 .vscode/
 .editorconfig
 content/.DS_Store
+content/posts/.DS_Store

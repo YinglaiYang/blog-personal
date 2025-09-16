@@ -1,7 +1,6 @@
 +++
-title = "MAKE the Blog - Use GNU Make to Automate Jekyll"
+title = "MAKE the Blog - Use GNU Make to Automate Zola"
 date = "2020-05-26"
-description = "Some Jekyll, web hosting and make scripts."
 tags = ["gnu-make", "automation", "blog", "jekyll"]
 +++
 There is a lot of work involved in getting static blog posts published to a server. You have to preview it for proofreading and editing, you have to build it, and in the end you also have to get the finished site onto a web server.

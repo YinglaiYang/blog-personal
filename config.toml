@@ -23,8 +23,9 @@ menu = [
 ]
 
 socials = [
-    { name = "twitter", url = "https://twitter.com/yangminded", icon = "twitter" },
+    { name = "x", url = "https://x.com/yangminded", icon = "x-twitter" },
     { name = "github", url = "https://github.com/yinglaiyang", icon = "github" },
+    { name = "linkedin", url = "https://www.linkedin.com/in/yinglaiyang/", icon = "linkedin" },
 ]
 
 custom_css = []

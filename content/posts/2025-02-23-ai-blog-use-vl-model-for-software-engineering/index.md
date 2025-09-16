@@ -1,6 +1,5 @@
 +++
-title = "Accelerated Software Engineering: Hand draw State Diagrams and get PlantUML code."
-description = "Use Vision-Language Models to turn drawings into machine-readable UML."
+title = "AI-Supported Software Engineering: Generate PlantUML Code from Hand-Drawn State Diagrams."
 date = 2025-02-23
 draft = false
 +++

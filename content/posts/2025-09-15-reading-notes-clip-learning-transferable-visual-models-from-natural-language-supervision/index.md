@@ -153,7 +153,7 @@ However, proprietary models more and more start to use grounding for better spat
 
 This video below starts out with an introduction to CLIP and then shows how a language free model like DINO learns to see using Self-Supervised-Learning techniques.
 <iframe 
-      src="https://youtu.be/oGTasd3cliM?si=3JbIP9jvFG1bdpQg" 
+      src="https://www.youtube.com/embed/oGTasd3cliM" 
       title="YouTube video player" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen

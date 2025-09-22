@@ -151,6 +151,7 @@ However, proprietary models more and more start to use grounding for better spat
       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
 </iframe>
 
+
 This video below starts out with an introduction to CLIP and then shows how a language free model like DINO learns to see using Self-Supervised-Learning techniques.
 <iframe 
       src="https://youtu.be/oGTasd3cliM?si=3JbIP9jvFG1bdpQg" 

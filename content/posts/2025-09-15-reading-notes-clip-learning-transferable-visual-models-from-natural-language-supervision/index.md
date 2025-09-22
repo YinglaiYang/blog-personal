@@ -145,10 +145,9 @@ However, proprietary models more and more start to use grounding for better spat
 <iframe 
       src="https://www.youtube.com/embed/kxO6ARgI_SU" 
       title="YouTube video player" 
-      frameborder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      style="width: 100%; height: 300;">
 </iframe>
 
 
@@ -156,10 +155,9 @@ This video below starts out with an introduction to CLIP and then shows how a la
 <iframe 
       src="https://youtu.be/oGTasd3cliM?si=3JbIP9jvFG1bdpQg" 
       title="YouTube video player" 
-      frameborder="0" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
       allowfullscreen
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+      style="width: 100%; height: 300;">
 </iframe>
 
 # Glossary

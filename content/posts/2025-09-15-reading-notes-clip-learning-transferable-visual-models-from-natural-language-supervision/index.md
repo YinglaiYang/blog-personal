@@ -95,9 +95,19 @@ The authors note two limitations: First, their overlap detector is only tuned wi
 
 _Note: I myself experienced this when evaluating e.g. agents that have web-search as tool and using established datasets for eval._
 
+## Closing Notes by the Authors On Limitations
+- CLIP is weak to random in tasks which are not represented in the web-scale dataset.
+- CLIP cannot do effective few-shot learning by itself (compare to previous note of the author on how humans improved performance significantly with 1-shot vs. zero-shot).
+- CLIP is still brittle in terms of generalization. This can be observed by comparing the quite good performance on digitally rendered text vs. handwritten digits from MNIST.
+
+
 # CLIP in Context
 ## The Vision-Transformer
 Dosovitsky
+
+## Further Weaknesses of CLIP
+- Strong bias on text in images compared to objects in image: [Paper](https://linyq17.github.io/CLIP-Parrot-Bias/)
+- 
 
 ## Successors of CLIP and Alternatives to It
 ### First Evolution of CLIP: SigLIP
@@ -140,6 +150,12 @@ It can be noted that CLIP-derivatives have an outsize role in open-source models
 
 However, proprietary models more and more start to use grounding for better spatial understanding. E.g. it is very likely that SigLIP2 is used in Gemini 2.5 which was demonstrated to be capable to drive robotic applications as part of a VLAM (Vision-Language-Action-Model): https://arxiv.org/pdf/2507.10672v1 
 
+## Applications of CLIP outside of VLMs
+CLIP shows flexibility in application. Below you can find some examples incl.  
+1. Image segmentation: [Paper](https://arxiv.org/pdf/2112.10003) [Hugging Face Space](
+2. Image search: [Hugging Face Space 1](https://huggingface.co/spaces/clip-italian/clip-italian-demo) [Hugging Face Space 2](https://huggingface.co/spaces/vivien/clip-slip)
+3. Detect AI-generated images: [Paper](https://arxiv.org/pdf/2404.12908)
+
 # Recommended Youtube Videos
 [Lucas Beyer](https://x.com/giffmana) (ex Google Deepmind, now Meta AI), one of the authors of SigLIP, explains CLIP, SigLIP, how SigLIP is integrated into PaliGemma and also some interesting findings.
 <iframe 
@@ -159,6 +175,9 @@ This video below starts out with an introduction to CLIP and then shows how a la
       allowfullscreen
       style="width: 100%; height: 300;">
 </iframe>
+
+# Play With CLIP
+
 
 # Glossary
 ## Hypernetwork

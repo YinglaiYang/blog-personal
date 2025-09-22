@@ -140,6 +140,28 @@ It can be noted that CLIP-derivatives have an outsize role in open-source models
 
 However, proprietary models more and more start to use grounding for better spatial understanding. E.g. it is very likely that SigLIP2 is used in Gemini 2.5 which was demonstrated to be capable to drive robotic applications as part of a VLAM (Vision-Language-Action-Model): https://arxiv.org/pdf/2507.10672v1 
 
+# Recommended Youtube Videos
+[Lucas Beyer](https://x.com/giffmana) (ex Google Deepmind, now Meta AI), one of the authors of SigLIP, explains CLIP, SigLIP, how SigLIP is integrated into PaliGemma and also some interesting findings.
+<iframe 
+      src="https://www.youtube.com/embed/kxO6ARgI_SU" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</iframe>
+
+
+This video below starts out with an introduction to CLIP and then shows how a language free model like DINO learns to see using Self-Supervised-Learning techniques.
+<iframe 
+      src="https://youtu.be/oGTasd3cliM?si=3JbIP9jvFG1bdpQg" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</iframe>
+
 # Glossary
 ## Hypernetwork
 "Hypernetwork" is mentioned in section 3.1.2 of the paper. Specifically:

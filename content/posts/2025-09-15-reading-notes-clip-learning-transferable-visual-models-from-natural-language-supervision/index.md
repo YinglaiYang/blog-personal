@@ -35,21 +35,110 @@ Below the video is embedded for preview.
   <p>Your browser does not support iframes.</p>
 </iframe>
 
-## Notes about highlights of the paper in more detail
 ## The model architecture
+s. paper.
+
 ## Contrastive Learning
-## Ablation studies
-## Findings for Inference
+s. paper.
+
+## Inference Architecture
 ### Efficient Inference
+s. paper. 
+
+Notably the part about being able to freeze text-encoder classifier. Imagine as a hypernetwork adaptable to tasks.
+
 ### Prompting change
+s. paper.
+
+3.1.4: Notes issues with traditional dataset, amongst which:
+- Polysemy: eg “crane” the bird or “crane” the construction machine
+- In the CLIP database, normally whole sentences instead of just single words. This skews distribution when applying onto traditional datasets which are a single word only. Applying prompt engineering by creating whole sentences like “A photo of a {label}” the performance increases.
+- Adding context in prompts also helps: eg “a satellite image of {}” or “a photo of a {}, a type of pet”.
+- The authors propose ensembling as visualized here: https://claude.ai/public/artifacts/4435a9a7-a5e0-47f0-af45-036fa9345325
+
+CLIP can handle issues with polysemy e.g. by giving basic context without added information. E.g. telling it that it has to recognize pets in the Oxford pets dataset.
+
+## Ablation studies
+### Comparison to SOTA ImageNet Model
+CLIP has definite advantage in tasks where:
+1. OCR is required (e.g. SST2, HatefulMemes)
+2. ImageNet labels do not sufficiently capture diversity of certain objects and thus sacrifice precision by bundling very diverse objects in the same class (e.g. "traffic sign" vs. "stop sign", "warning sign", "speed limit 30" etc).
+
+CLIP is worse in tasks where:
+- Images are very small.
+
+![alt text](zero-shot-clip-vs-best-imagenet-model.png)
+
+### Robustness to Natural Distribution Shift
+Adding a logistic regression classifier onto CLIP to fit to ImageNet creates a 9.2% jump in accuracy on ImageNet. But this comes with the cost of reducing performance in other datasets.
+
+On the other hand, adapting CLIP in a zero-shot way by making a classifier only that contains the relevant classes of the dataset improves overall performance over all of the "NDS variations of ImageNet".
+
 ### Zero-Shot vs. Few-Shot
+Zero-shot is actually better than few shot in general until more samples come in. Also the distribution of samples necessary to surpass zero-shot shows which datasets are little covered by the internet-scale database: e.g. remote sensing (satellite imagery).
+
+### Comparison to Human
+Finding: Humans become much better with 1-shot. This tapers of with more samples. It is also mostly in classes that humans are uncertain about. --> Humans know what they don't know and are also to generalize quite well from a single image only. Probably prior-knowledge is also a factor though.
+
+For some reason the authors did not include 1-shot CLIP performance though.
+
+
+
+## Internet-as-Pretraining-Dataset Raises Need to Adress Data Overlap with Eval
+The authors of the paper also raise the need to address and analyze data overlap. 
+
+Because the pretraining of CLIP was done with large-scale internet data, this pretraining data is likely to contain at least some samples very close or identical to samples from eval datasets.
+
+To address this they developed an overlap detector which finds nearest neighbor samples over a threshold and forward those for manual verification.
+
+The authors note two limitations: First, their overlap detector is only tuned with human feedback on the samples which have been identified as relevant nearest neighbors. However they have no insight into the recall of the detector in the rest of the data. Second, the distribution of the dataset can change signinificantly between the resulting subsets "Overlap" and "Clean" of datasets. This needs to be considered when interpreting results. E.g. the performance of CLIP on Kinetics-700 curiously drops by 20% on the "Overlap" subset, which is explained by the "Overlap" subset consisting very many black transition frames.
+
+_Note: I myself experienced this when evaluating e.g. agents that have web-search as tool and using established datasets for eval._
 
 # CLIP in Context
 ## The Vision-Transformer
 Dosovitsky
-## Role of CLIP in VLMs
-## Successors of CLIP and Alternatives to it
 
+## Successors of CLIP and Alternatives to It
+### First Evolution of CLIP: SigLIP
+https://arxiv.org/pdf/2303.15343 
+
+Usage of Sigmoid instead of Softmax makes training more robust (esp. on small to medium batch sizes) and resulting models more performant.
+
+### A Language-Free Alternative to CLIP: DINO (Language Free SSL)
+https://arxiv.org/pdf/2104.14294 
+https://arxiv.org/pdf/2304.07193 
+
+DINO is Meta's alternative approach to CLIP for scaling image understanding. Instead of learning from text-image pairs, it learns image understanding on images only. The outcome is a model that does not directly give out textual descriptions, but has a very strong understanding of images. E.g. it performs well in segmentation tasks and identifying "semantic" parts of an object or doing depth estimation.
+
+### Better Through Self-Distillation And SSL: SigLIP 2
+https://arxiv.org/pdf/2502.14786 
+
+SigLIP 2 puts a big focus on extending SigLIP with grounding, e.g. for better spatial understanding and higher correctness in questions like "How many bottles are to the left of the paper tray?". It uses methods from Self-Supervised-Learning.
+
+## Role of CLIP in VLMs
+Notable VLMs (open source): **Intern VL (IMHO best technical papers to learn about VLMs)**, Qwen VL, PaliGemma, Moondream
+
+All of these use CLIP-derivatives. Either CLIP itself or SigLIP.
+
+However, https://arxiv.org/pdf/2310.08825 shows that also the usage of a language-free vision encoder like the DINO-family is possible.
+
+All of those follow the same rough architecture which consists of:
+```mermaid
+# Try to read it. Mermaid integration in the blog is going to come later.
+flowchart LR
+  VE[Vision Encoder] --> MLP[MLP] --> LLM[LLM]
+```
+
+This means that in general both Vision Encoder (e.g. CLIP / SigLIP) are taken as-is from pretraining (same goes for the LLM). 
+
+Then the MLP is being trained (as a relatively thin layer) to align the Vision-Encoder and LLM.
+
+Then finally, further training is being done - either fine-tuning or RL.
+
+It can be noted that CLIP-derivatives have an outsize role in open-source models. 
+
+However, proprietary models more and more start to use grounding for better spatial understanding. E.g. it is very likely that SigLIP2 is used in Gemini 2.5 which was demonstrated to be capable to drive robotic applications as part of a VLAM (Vision-Language-Action-Model): https://arxiv.org/pdf/2507.10672v1 
 
 # Glossary
 ## Hypernetwork

@@ -1,7 +1,7 @@
 +++
 title = "Systems of Intelligence: From Humans to Computers to AI"
 date = 2026-01-18
-draft = false
+draft = true
 tags = ["AI", "systems thinking", "computer history", "philosophy"]
 +++
 

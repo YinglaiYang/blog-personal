@@ -2,7 +2,13 @@
 title = "Fenfen"
 description = "复习哪些行为记多少分"
 weight = 1
+
+[extra]
+toc = false
 +++
+
+# 记分分值复习游戏
+
 <section id="fenfen-game" aria-labelledby="fenfen-game-title">
   <div class="fg-main">
     <header class="fg-heading">
